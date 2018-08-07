@@ -1,0 +1,23 @@
+extends ../../../assets/pug-templates/projects-layout.pug
+block script
+    - var pageTitle = "(Another) To-do List App";
+    meta(name="description" content="SEO stuff")
+block style    
+    link(rel="stylesheet" href="public/css/styles-todo.css")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous")
+block navigation
+block content
+    body
+        .container
+            .row
+                .col
+                .col-8.container__todo
+                    h1 To-do List <span id="addTodo"><i class="far fa-edit"></i></span>
+                    input#todoInput(type="text", name="newTodoItem", placeholder="Add a to-do...")
+                    ul
+                        li <span><i class="far fa-trash-alt"></i></span> I am a todo
+                        li <span><i class="far fa-trash-alt"></i></span> I am also a todo
+                        li <span><i class="far fa-trash-alt"></i></span> Me, a todo as well
+                .col
+block endscript
+    script(src="public/js/scripts.js")

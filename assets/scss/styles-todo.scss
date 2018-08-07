@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+$offwhite: #f7f7f7;
+$light-black: #666;
+$blue-accent: #2980b9;
+$red: #e743c3;
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #83a4d4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #b6fbff, #83a4d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.container__todo{
+    margin: 10vw;
+    background: $offwhite;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.todo__item--completed {
+    color: gray;
+    text-decoration: line-through;
+}
+
+h1 {
+    background: $blue-accent;
+    color: white;
+    margin: 0;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 2.4em;
+    font-weight: 400;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    background: #fff;
+    height: auto;
+    line-height: 2.1em;
+    // padding: .3em .3em .3em .6em;
+    color: $light-black;
+    font-size: 1.2em;
+
+    &:nth-child(2n){
+        background: $offwhite;
+    }
+    
+    &:last-child {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    &:hover{
+        background-color: lighten($color: $blue-accent, $amount: 45);
+    }
+
+    &:hover span {
+        width: 2.1em;
+        opacity: 1.0;
+    }
+
+    span {
+        background: $red;
+        height: auto;
+        margin-right: 1em;
+        text-align: center;
+        color: white;
+        width: 0;
+        display: inline-block;
+        transition: 0.2s linear;
+        opacity: 0;
+    }
+}
+
+input {
+    font-size: 1.3em;
+    background-color: $offwhite;
+    width: 100%;
+    padding: .3em .3em .4em .6em;
+    color: $blue-accent;
+    border: 3px solid transparent;
+
+    &:focus {
+        background: white;
+        border: 3px solid $blue-accent;
+        outline: none;
+    }
+}
+
+.fa-edit {
+    float: right;
+    cursor: pointer;
+    transition: .15s linear;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
